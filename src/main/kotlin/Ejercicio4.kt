@@ -11,14 +11,17 @@ private lateinit var pB: Process
 /*
 En el ejercicio original se pedia que el tiempo de lanzamiento tuviese en cuenta a la cantidad de pasajeros de la capsula
 Veia excesivo el tener que esperar hasta 1 minuto o mas haciendo las pruebas, asi que lo deje como un elemento random
+
+La solucion para el ejercicio seria seleccionar la linea escogida (que por suerte siempre es un numero), pasarla a int
+Luego a segundos, y entonces sumarlo al 1..5 random en tiempoFinal.
 */
 
 fun main() {
     val CAPSULAS = 4
     var contadorID = 0
 
-    println("Lanzando capsulas...")
     val comprobador: Boolean = OSController.init()
+    println("Preparando capsulas...")
 
     val userDir = System.getProperty("user.dir")
     val pathJar = Paths.get(userDir + FS + "build" + FS + "libs")
@@ -34,7 +37,7 @@ fun main() {
             while (reader.readLine().also { line = it } != null) {
                 println("Capsula: $contadorID | Pasajeros: ${line.toString()}")
 
-                val tiempoFinal = (10..20).random().seconds + (1..5).random().seconds
+                val tiempoFinal = (5..10).random().seconds + (1..5).random().seconds
 
                 println("Lanzando capsula, tiempo estimado: $tiempoFinal ")
                 Thread.sleep(tiempoFinal.inWholeMilliseconds)
