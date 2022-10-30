@@ -44,7 +44,7 @@ fun main() {
             }
         }
         System.err.println("Mision completada...")
-        exitProcess(2025)
+        exitProcess(122)
 
     } else {
 
@@ -62,7 +62,7 @@ fun main() {
             }
         }
         System.err.println("Mision completada...")
-        exitProcess(2024)
+        exitProcess(123)
     }
 
 }
