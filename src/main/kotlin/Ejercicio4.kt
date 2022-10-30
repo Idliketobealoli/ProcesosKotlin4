@@ -55,7 +55,7 @@ fun main() {
             while (reader.readLine().also { line = it } != null) {
                 println("Capsula: $contadorID | Pasajeros: ${line.toString()}")
 
-                val tiempoFinal = (10..20).random().seconds + (1..5).random().seconds
+                val tiempoFinal = (5..10).random().seconds + (1..5).random().seconds
 
                 println("Lanzando capsula, tiempo estimado: $tiempoFinal ")
                 Thread.sleep(tiempoFinal.inWholeMilliseconds)
